@@ -1,11 +1,52 @@
 package com.company;
 
 public class PassengerPlane extends Airplane {
-    public PassengerPlane(String identification, int maximumWeight, int emptyWeight, int fuelCapacity) {
+    private int amountOfPassengers;
+    private int maximumPassengers;
+
+    public PassengerPlane(String identification, int maximumWeight, int emptyWeight, int fuelCapacity, int amountOfPassengers, int maximumPassengers) {
         super(identification, maximumWeight, emptyWeight, fuelCapacity);
-        int amountPassengers;
-        int maximumPassengers;
+        this.amountOfPassengers = amountOfPassengers;
+        this.maximumPassengers = maximumPassengers;
+    }
+
+    public int getAmountOfPassengers() {
+        return amountOfPassengers;
+    }
+
+    public void setAmountOfPassengers(int amountOfPassengers) {
+        this.amountOfPassengers = amountOfPassengers;
+    }
+
+    public int getMaximumPassengers() {
+        return maximumPassengers;
+    }
+
+    public void setMaximumPassengers(int maximumPassengers) {
+        this.maximumPassengers = maximumPassengers;
+    }
 
 
+    // Methods
+    // 1 Person boarded
+    public void boarding() {
+        this.amountOfPassengers += +1;
+        System.out.println(" 1 person boarding: " + this.amountOfPassengers + " people on board");
+    }
+
+    // man kann Integer mitgeben
+    public int boarding(int numberOfGroup) {
+        int seatsTaken = this.amountOfPassengers;
+        int seatsAvailable = this.maximumPassengers;
+        if (seatsTaken + numberOfGroup <= seatsAvailable) {
+            seatsTaken += numberOfGroup;
+            System.out.println(numberOfGroup + " people boarding: " + seatsTaken + " people on board");
+        }else if(seatsTaken == seatsAvailable){
+            System.out.println("All seats are taken.");
+        } else {
+            int seatsAvaliable = seatsAvailable - seatsTaken;
+            System.out.println("Only " + seatsAvaliable + " more passangers can board the plain.");
+        }this.amountOfPassengers = seatsTaken;
+        return this.amountOfPassengers;
     }
 }
