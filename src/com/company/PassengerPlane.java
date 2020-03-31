@@ -37,16 +37,18 @@ public class PassengerPlane extends Airplane {
     // man kann Integer mitgeben
     public int boarding(int numberOfGroup) {
         int seatsTaken = this.amountOfPassengers;
-        int seatsAvailable = this.maximumPassengers;
-        if (seatsTaken + numberOfGroup <= seatsAvailable) {
+        int maxSeats = this.maximumPassengers;
+        if (seatsTaken + numberOfGroup <= maxSeats) {
             seatsTaken += numberOfGroup;
             System.out.println(numberOfGroup + " people boarding: " + seatsTaken + " people on board");
-        }else if(seatsTaken == seatsAvailable){
+        } else if(seatsTaken == maxSeats)  {
             System.out.println("All seats are taken.");
-        } else {
-            int seatsAvaliable = seatsAvailable - seatsTaken;
+        }else{
+
+            int seatsAvaliable = maxSeats - seatsTaken;
             System.out.println("Only " + seatsAvaliable + " more passangers can board the plain.");
-        }this.amountOfPassengers = seatsTaken;
+        }
+        this.amountOfPassengers = seatsTaken;
         return this.amountOfPassengers;
     }
 }

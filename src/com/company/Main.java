@@ -9,9 +9,13 @@ public class Main {
         airliner1.boarding();
         airliner1.boarding(50);
         airliner1.boarding();
-        airliner1.boarding(22);
+        airliner1.boarding(57);
         airliner1.boarding();
-        airliner1.boarding(22);
+        airliner1.boarding(100);
+        airliner1.boarding(53);
+        airliner1.boarding(47);
+        airliner1.boarding(3
+        );
     }
 
 }
