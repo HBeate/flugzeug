@@ -2,6 +2,7 @@ package com.company;
 
 public class Freighter extends Airplane {
     private double cargo;
+    double cargoKg = this.cargo;
 
     public Freighter(String identification, int maximumWeight, int emptyWeight, int fuelCapacity) {
         super(identification, maximumWeight, emptyWeight, fuelCapacity);
@@ -14,10 +15,11 @@ public class Freighter extends Airplane {
 
 
         if ((loadedPlane + newCargo) <= this.getMaximumWeight()) {
-            System.out.print("Total cargo: " + this.cargo + ". Cargo to add: " + newCargo);
-            this.cargo += newCargo;
-            System.out.println(". Makes " + this.cargo);
-            return this.cargo;
+            System.out.print("Total cargo: " + cargoKg + ". Cargo to add: " + newCargo);
+            cargoKg += newCargo;
+            System.out.println(". Makes " + cargoKg);
+            cargo = cargoKg;
+            return cargo;
         } else {
             System.out.println("Too much cargo. There is only " + (getMaximumWeight() - loadedPlane)
                     + " more cargo possible");
@@ -26,12 +28,13 @@ public class Freighter extends Airplane {
     }
 
     public double unload(double unloadCargo) {
-        if (this.cargo >= unloadCargo) {
-            this.cargo -= unloadCargo;
-            System.out.println("Cargo taken off " + unloadCargo + ". Total cargo in plane: " + this.cargo);
+        if (cargoKg >= unloadCargo) {
+            cargoKg -= unloadCargo;
+            System.out.println("Cargo taken off " + unloadCargo + ". Total cargo in plane: " + cargoKg);
         } else {
-            System.out.println("Cargo to unload: " + unloadCargo + " is larger than cargo loaded: " + this.cargo);
+            System.out.println("Cargo to unload: " + unloadCargo + " is larger than cargo loaded: " + cargoKg);
         }
+        cargoKg = cargo;
         return cargo;
     }
 }
