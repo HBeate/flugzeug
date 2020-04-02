@@ -13,21 +13,10 @@ public class Airplane {
         this.fuelCapacity = fuelCapacity;
     }
 
-    public String getIdentification() {
-        return identification;
-    }
-
     public double getMaximumWeight() {
         return maximumWeight;
     }
 
-    public double getEmptyWeight() {
-        return emptyWeight;
-    }
-
-    public double getFuelCapacity() {
-        return fuelCapacity;
-    }
 //Methods
     public double getWeight() {
       double weight = this.emptyWeight + this.fuelCapacity;

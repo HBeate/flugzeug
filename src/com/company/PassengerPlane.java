@@ -10,23 +10,6 @@ public class PassengerPlane extends Airplane {
         this.maximumPassengers = maximumPassengers;
     }
 
-    public int getAmountOfPassengers() {
-        return amountOfPassengers;
-    }
-
-    public void setAmountOfPassengers(int amountOfPassengers) {
-        this.amountOfPassengers = amountOfPassengers;
-    }
-
-    public int getMaximumPassengers() {
-        return maximumPassengers;
-    }
-
-    public void setMaximumPassengers(int maximumPassengers) {
-        this.maximumPassengers = maximumPassengers;
-    }
-
-
     // Methods
     // 1 Person boarded
     public void boarding() {
@@ -41,12 +24,13 @@ public class PassengerPlane extends Airplane {
         if (seatsTaken + numberOfGroup <= maxSeats) {
             seatsTaken += numberOfGroup;
             System.out.println(numberOfGroup + " people boarding: " + seatsTaken + " people on board");
-        } else if(seatsTaken == maxSeats)  {
-            System.out.println("All seats are taken.");
-        }else{
+        } else {
 
             int seatsAvaliable = maxSeats - seatsTaken;
             System.out.println("Only " + seatsAvaliable + " more passangers can board the plain.");
+        }
+        if (seatsTaken == maxSeats) {
+            System.out.println("All seats are taken.");
         }
         this.amountOfPassengers = seatsTaken;
         return this.amountOfPassengers;
