@@ -23,11 +23,14 @@ public class Airplane {
         return weight;
     }
 
-    public void fuel(double fuelLevel) {
-        if (fuelLevel < this.fuelCapacity) {
-            System.out.println("The fuel level is at: " + fuelLevel + ". Maximum is " + this.fuelCapacity + ".");
+    public void fuel(double addFuel) {
+        if (addFuel < this.fuelCapacity) {
+            System.out.println("The fuel level is at: " + addFuel + ". Maximum is " + this.fuelCapacity + ".");
+        } else if (addFuel == this.fuelCapacity) {
+            System.out.println("The plane is fully fueled.");
+        } else {
+            System.out.println("You can only add " + (this.fuelCapacity) + " and not " + addFuel+" liters. Please enter a valid amount.");
         }
-
     }
 
 

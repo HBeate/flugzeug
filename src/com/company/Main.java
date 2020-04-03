@@ -23,9 +23,8 @@ public class Main {
         freighter1.load(25);
         freighter1.unload(30);
         freighter1.unload(45);
-        freighter1.fuel(1000);
-
-
+        freighter1.fuel(400);
+        freighter1.fuel(300);
     }
 }
 
