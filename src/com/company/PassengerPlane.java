@@ -4,7 +4,8 @@ public class PassengerPlane extends Airplane {
     private int amountOfPassengers;
     private int maximumPassengers;
 
-    public PassengerPlane(String identification, int maximumWeight, int emptyWeight, int fuelCapacity, int amountOfPassengers, int maximumPassengers) {
+    public PassengerPlane(String identification, int maximumWeight, int emptyWeight, int fuelCapacity,
+                          int amountOfPassengers, int maximumPassengers, int fuel) {
         super(identification, maximumWeight, emptyWeight, fuelCapacity);
         this.amountOfPassengers = amountOfPassengers;
         this.maximumPassengers = maximumPassengers;
@@ -13,8 +14,10 @@ public class PassengerPlane extends Airplane {
     // Methods
     // 1 Person boarded
     public void boarding() {
-        this.amountOfPassengers += +1;
-        System.out.println(" 1 person boarding: " + this.amountOfPassengers + " people on board");
+        boarding(1);
+        /*
+        this.amountOfPassengers++;
+        System.out.println(" 1 person boarding: " + this.amountOfPassengers + " people on board");*/
     }
 
     // man kann Integer mitgeben
@@ -33,6 +36,15 @@ public class PassengerPlane extends Airplane {
             System.out.println("All seats are taken.");
         }
         this.amountOfPassengers = seatsTaken;
+        return this.amountOfPassengers;
+    }
+
+    public int getAmountOfPassengers() {
+        return amountOfPassengers;
+    }
+
+    public double getPassengers() {
+        System.out.println("There are " + this.amountOfPassengers + " passengers.");
         return this.amountOfPassengers;
     }
 }
